@@ -82,13 +82,15 @@ Segundo SELECT * FROM T; (después del ROLLBACK):
  EJERCICIO 6 : la Tabla T. Prueba de Errores (Contexto Supabase/PostgreSQL)
 
 SQL
-------------------------------------
+-- ---------------------------------
+
 DELETE FROM T WHERE id > 1;
 COMMIT;
 INSERT INTO T (id, s) VALUES (2, 'La prueba de errores comienza aqui');
 SELECT (1/0) AS dummy FROM T;
 DELETE FROM T WHERE id = 7777 ;
-------------------------------------
+-- ---------------------------------
+
 *Como se comportará el Código? Que resultados dará?*
 
  INSERT INTO T (id, s) VALUES (2, 'La prueba de errores comienza aqui');;--ERROR:  22001: value too long for type character varying(30)
@@ -118,8 +120,8 @@ no interrumpa todo el flujo.
 
 *Como quedaría el código?*
 SQL
-------------------------------------
--- Solución para el error de longitud (truncando):
+-- ---------------------------------
+ Solución para el error de longitud (truncando):
 DELETE FROM T WHERE id > 1;
 COMMIT;
 INSERT INTO T (id, s) VALUES (2, LEFT('La prueba de errores comienza aqui', 30));
@@ -132,7 +134,8 @@ SELECT
 FROM T;
 -- Ahora esta línea se ejecutará (si los errores anteriores se corrigieron)
 DELETE FROM T WHERE id = 7777 ;
-------------------------------------
+-- ---------------------------------
+
 *¿Qué aprendemos de los resultados?*
 Múltiples errores detienen el flujo: Un error en una sentencia SQL puede impedir que las sentencias posteriores en el mismo lote se ejecuten.
 La importancia del esquema: Las restricciones de la tabla (como la longitud del VARCHAR) deben ser respetadas.
