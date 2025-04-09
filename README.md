@@ -15,8 +15,12 @@ Resultado del SELECT * FROM T ; (dentro de la transacción):
 ![image](https://github.com/user-attachments/assets/161c58cd-a9a6-4763-bbe7-2873abf8d544)
 
 
+
+
 Resultado del SELECT * FROM T; (después del ROLLBACK):
 ![image](https://github.com/user-attachments/assets/2afc8614-133c-4c60-88d6-3e54ea035baf)
+
+
 
 
 *Justifique la respuesta:*
