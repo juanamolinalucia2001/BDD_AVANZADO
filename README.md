@@ -23,7 +23,7 @@ Resultado del SELECT * FROM T; (después del ROLLBACK):
 -- ---------------------------------
 
 *Justifique la respuesta:*
-Respuesta: La instrucción START TRANSACTION; inicia un bloque de operaciones. Dentro de este bloque,
+La instrucción START TRANSACTION; inicia un bloque de operaciones. Dentro de este bloque,
 se inserta una nueva fila con id = 4. El primer SELECT muestra el estado de la tabla en ese momento,
 incluyendo la nueva fila. Sin embargo, la instrucción ROLLBACK; deshace todos los cambios realizados
 dentro de esta transacción. Por lo tanto, el segundo SELECT muestra la tabla volviendo a su estado
@@ -38,10 +38,11 @@ SELECT * FROM T;
 -- ------------------------------------
 *¿Que se obtiene como resultado de ejecutar la sentencia SELECT * FROM T?*
 El resultado de la sentencia SELECT * FROM T; será:
+-- ---------------------------------
 ![image](https://github.com/user-attachments/assets/ddcf9217-8acb-4f7f-93d5-7b8c7a706374)
-
+-- ---------------------------------
 *Justifíquelo:*
-Respuesta: La sentencia INSERT INTO T (id, s) VALUES (5, 'fifth'); añade una nueva fila a la tabla T.
+La sentencia INSERT INTO T (id, s) VALUES (5, 'fifth'); añade una nueva fila a la tabla T.
 La instrucción COMMIT; guarda de forma permanente todos los cambios realizados desde la última vez 
 que se inició una transacción (en este caso, la inserción de la fila con id = 5). Por lo tanto, 
 la sentencia SELECT * FROM T; final muestra todas las filas de la tabla, incluyendo la recién insertada.
@@ -70,9 +71,9 @@ id | s      | si
 (Asumiendo el estado inicial o después del COMMIT del Ejercicio 4)
 
 Segundo SELECT * FROM T; (después del ROLLBACK):
-
+-- ---------------------------------
 ![image](https://github.com/user-attachments/assets/9f02e581-416e-4537-b758-b337bbfda68d)
-
+-- ---------------------------------
 *Justifíquelo*
  Al iniciar la transacción (START TRANSACTION), eliminamos filas y luego insertamos otras. 
  El primer SELECT muestra estos cambios temporales. El ROLLBACK deshace todos los cambios 
@@ -106,7 +107,9 @@ este tipo de errores de inserción o actualización, informando al usuario de ma
 
 *En que estado queda T (cual es su contenido)*
  T queda con la fila id = 1 (si no se borró) y sin la fila id = 2 debido al error de longitud.
+ -- ---------------------------------
  ![image](https://github.com/user-attachments/assets/9128e774-076e-4eb1-9658-cc2b5ac7f80f)
+ -- ---------------------------------
 
 *Como se evitan estos errores*
 Error de longitud de VARCHAR: Validar la longitud de los datos antes de la inserción (en la aplicación o con restricciones en la base de datos).
