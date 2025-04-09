@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/2136a9f2-8a8c-4716-9974-36973248e2cf)# TP_AVANZADO
+# TP_AVANZADO
 EJERCICIO 3: la Tabla T (Transacciones)
 
 SQL
