@@ -88,8 +88,7 @@ COMMIT;
 INSERT INTO T (id, s) VALUES (2, 'La prueba de errores comienza aqui');
 SELECT (1/0) AS dummy FROM T;
 DELETE FROM T WHERE id = 7777 ;
-Preguntas y Respuestas:
-
+------------------------------------
 *Como se comportará el Código? Que resultados dará?*
 
  INSERT INTO T (id, s) VALUES (2, 'La prueba de errores comienza aqui');;--ERROR:  22001: value too long for type character varying(30)
