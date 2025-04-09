@@ -123,7 +123,6 @@ SQL
 DELETE FROM T WHERE id > 1;
 COMMIT;
 INSERT INTO T (id, s) VALUES (2, LEFT('La prueba de errores comienza aqui', 30));
-
 -- Solución para el error de división por cero (usando CASE):
 SELECT
     CASE
@@ -131,10 +130,9 @@ SELECT
         ELSE (1/0)
     END AS dummy
 FROM T;
-
 -- Ahora esta línea se ejecutará (si los errores anteriores se corrigieron)
 DELETE FROM T WHERE id = 7777 ;
-
+------------------------------------
 *¿Qué aprendemos de los resultados?*
 Múltiples errores detienen el flujo: Un error en una sentencia SQL puede impedir que las sentencias posteriores en el mismo lote se ejecuten.
 La importancia del esquema: Las restricciones de la tabla (como la longitud del VARCHAR) deben ser respetadas.
