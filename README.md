@@ -12,15 +12,15 @@ SELECT * FROM T;
 Antes de empezar este bloque de comandos, 
 la tabla T tiene 3 tuplas (con id 1, 2 y 3).
 Resultado del SELECT * FROM T ; (dentro de la transacción):
+-- ---------------------------------
 ![image](https://github.com/user-attachments/assets/161c58cd-a9a6-4763-bbe7-2873abf8d544)
-<br>
+-- ---------------------------------
 
 
 Resultado del SELECT * FROM T; (después del ROLLBACK):
+-- ---------------------------------
 ![image](https://github.com/user-attachments/assets/2afc8614-133c-4c60-88d6-3e54ea035baf)
-<br>
-
-
+-- ---------------------------------
 
 *Justifique la respuesta:*
 Respuesta: La instrucción START TRANSACTION; inicia un bloque de operaciones. Dentro de este bloque,
